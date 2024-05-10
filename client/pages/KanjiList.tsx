@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useKanjiList } from '../hooks/useKanji'
 import { useParams } from 'react-router-dom'
+import KanjiDisplay from '../components/KanjiDisplay'
 
 export default function KanjiList() {
   const { data: kanji, isLoading, isError } = useKanjiList()
@@ -29,10 +30,13 @@ export default function KanjiList() {
     const kanjiArray = kanji.slice(minKanji, maxKanji)
     console.log(kanjiArray)
 
-    return (
-      <>
-        <p>heyyy</p>
-      </>
-    )
+    if (kanjiArray)
+      return (
+        <>
+          {kanjiArray.map((kanji: string, i: number) => (
+            <KanjiDisplay kanji={kanji} key={i} />
+          ))}
+        </>
+      )
   }
 }

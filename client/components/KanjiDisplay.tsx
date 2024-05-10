@@ -1,7 +1,11 @@
-export default function KanjiDisplay() {
+interface Props {
+  kanji: string
+}
+
+export default function KanjiDisplay({ kanji }: Props) {
   return (
     <>
-      <p>single kanji</p>
+      <p>{kanji}</p>
     </>
   )
 }
