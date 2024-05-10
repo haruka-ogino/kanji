@@ -1,4 +1,4 @@
-export default function KanjiList() {
+export default function KanjiDisplay() {
   return (
     <>
       <p>single kanji</p>

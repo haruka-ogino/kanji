@@ -5,6 +5,6 @@ import KanjiList from './pages/KanjiList.tsx'
 export default createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route index element={<Home />} />
-    <Route path="kanji" element={<KanjiList />} />
+    <Route path="kanji/:page" element={<KanjiList />} />
   </Route>,
 )
