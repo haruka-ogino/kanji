@@ -13,6 +13,17 @@ export async function getKanjiList() {
   }
 }
 
+export async function getKanjiInfo(character: string) {
+  try {
+    const res = await request.get(rootUrl + `/${character}`)
+
+    return res.body
+  } catch (error) {
+    console.error('Error fetching kanji')
+    throw new Error('Failed to fetch kanji. Please try again.')
+  }
+}
+
 const myRootUrl = '/api/v1'
 export async function getMyKanji() {
   try {
