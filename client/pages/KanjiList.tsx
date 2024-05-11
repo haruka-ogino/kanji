@@ -2,9 +2,12 @@ import { useKanjiList } from '../hooks/useKanji'
 import { useParams } from 'react-router-dom'
 import KanjiDisplay from '../components/KanjiDisplay'
 import '../styles/character.css'
+import { useState } from 'react'
+import KanjiBackside from '../components/KanjiBackside'
 
 export default function KanjiList() {
   const { data: kanji, isLoading, isError } = useKanjiList()
+  const [back, setBack] = useState(false)
 
   // To get the first n elements of an array, use
 
@@ -33,9 +36,13 @@ export default function KanjiList() {
     if (kanjiArray)
       return (
         <div className="character-list">
-          {kanjiArray.map((kanji: string, i: number) => (
-            <KanjiDisplay kanji={kanji} key={i} />
-          ))}
+          {kanjiArray.map((kanji: string, i: number) =>
+            !back ? (
+              <KanjiDisplay kanji={kanji} key={i} setBack={setBack} />
+            ) : (
+              <KanjiBackside kanji={kanji} key={i} />
+            ),
+          )}
         </div>
       )
   }

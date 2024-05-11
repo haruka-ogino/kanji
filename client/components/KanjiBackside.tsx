@@ -4,7 +4,7 @@ interface Props {
   kanji: string
 }
 
-export default function KanjiDisplay({ kanji }: Props) {
+export default function KanjiBackside({ kanji }: Props) {
   const { data: character, isLoading, isError } = useKanjiInfo(kanji)
 
   // To get the first n elements of an array, use
