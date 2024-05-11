@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { useKanjiList } from '../hooks/useKanji'
 import { useParams } from 'react-router-dom'
 import KanjiDisplay from '../components/KanjiDisplay'
+import '../styles/character.css'
 
 export default function KanjiList() {
   const { data: kanji, isLoading, isError } = useKanjiList()
@@ -32,11 +32,11 @@ export default function KanjiList() {
 
     if (kanjiArray)
       return (
-        <>
+        <div className="character-list">
           {kanjiArray.map((kanji: string, i: number) => (
             <KanjiDisplay kanji={kanji} key={i} />
           ))}
-        </>
+        </div>
       )
   }
 }

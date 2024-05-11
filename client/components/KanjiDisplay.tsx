@@ -4,8 +4,8 @@ interface Props {
 
 export default function KanjiDisplay({ kanji }: Props) {
   return (
-    <>
-      <p>{kanji}</p>
-    </>
+    <div className="character">
+      <h2>{kanji}</h2>
+    </div>
   )
 }
