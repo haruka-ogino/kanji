@@ -40,7 +40,7 @@ export default function KanjiList() {
             !back ? (
               <KanjiDisplay kanji={kanji} key={i} setBack={setBack} />
             ) : (
-              <KanjiBackside kanji={kanji} key={i} />
+              <KanjiBackside kanji={kanji} key={i} setBack={setBack} />
             ),
           )}
         </div>
