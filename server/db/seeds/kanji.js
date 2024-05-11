@@ -4,8 +4,8 @@ export async function seed(knex) {
 
   // Inserts seed entries
   await knex('kanji').insert([
-    { id: 1, name: '机' },
-    { id: 2, name: '持' },
-    { id: 3, name: '観' },
+    { id: 1, character: '机' },
+    { id: 2, character: '持' },
+    { id: 3, character: '観' },
   ])
 }
