@@ -12,7 +12,6 @@ export default function KanjiList() {
 
   const param = useParams()
   const page = Number(param.page)
-  console.log(page)
 
   if (isLoading) {
     return <p>is loading...</p>
@@ -23,12 +22,10 @@ export default function KanjiList() {
 
   if (kanji) {
     const maxKanji = page * 20
-    console.log(maxKanji)
     const minKanji = maxKanji - 20
-    console.log(minKanji)
 
     const kanjiArray = kanji.slice(minKanji, maxKanji)
-    console.log(kanjiArray)
+    // console.log(kanjiArray)
 
     if (kanjiArray)
       return (

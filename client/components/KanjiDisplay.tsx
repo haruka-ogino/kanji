@@ -9,7 +9,6 @@ export default function KanjiDisplay({ kanji, setBack, i }: Props) {
     setBack((prevBack) => {
       const newBack = [...prevBack]
       newBack[i] = true
-      console.log(newBack)
       return newBack
     })
   }
