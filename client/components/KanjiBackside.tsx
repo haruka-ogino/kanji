@@ -3,9 +3,10 @@ import { useKanjiInfo } from '../hooks/useKanji'
 interface Props {
   kanji: string
   setBack: React.Dispatch<React.SetStateAction<boolean[]>>
+  i: number
 }
 
-export default function KanjiBackside({ kanji, setBack }: Props) {
+export default function KanjiBackside({ kanji, setBack, i }: Props) {
   const { data: character, isLoading, isError } = useKanjiInfo(kanji)
 
   // To get the first n elements of an array, use
