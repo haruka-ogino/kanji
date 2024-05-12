@@ -8,6 +8,10 @@ import KanjiBackside from '../components/KanjiBackside'
 export default function KanjiList() {
   const { data: kanji, isLoading, isError } = useKanjiList()
   const [back, setBack] = useState(false)
+  const initialStates = Array.from({ length: 20 }, () => false)
+  const [state, setState] = useState(initialStates)
+
+  console.log(state)
 
   // To get the first n elements of an array, use
 
