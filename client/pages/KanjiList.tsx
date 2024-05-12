@@ -34,7 +34,7 @@ export default function KanjiList() {
       return (
         <div className="character-list">
           {kanjiArray.map((kanji: string, i: number) =>
-            !back ? (
+            !back[i] ? (
               <KanjiDisplay kanji={kanji} key={i} setBack={setBack} i={i} />
             ) : (
               <KanjiBackside kanji={kanji} key={i} setBack={setBack} i={i} />
