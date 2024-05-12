@@ -2,7 +2,7 @@ import { useKanjiInfo } from '../hooks/useKanji'
 
 interface Props {
   kanji: string
-  setBack: React.Dispatch<React.SetStateAction<boolean>>
+  setBack: React.Dispatch<React.SetStateAction<boolean[]>>
 }
 
 export default function KanjiBackside({ kanji, setBack }: Props) {
@@ -22,6 +22,7 @@ export default function KanjiBackside({ kanji, setBack }: Props) {
   if (character) {
     console.log(character)
 
+    function flipCard() {}
     return (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
       <div className="character" onClick={() => setBack(true)}>

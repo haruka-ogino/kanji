@@ -7,15 +7,8 @@ import KanjiBackside from '../components/KanjiBackside'
 
 export default function KanjiList() {
   const { data: kanji, isLoading, isError } = useKanjiList()
-  const [back, setBack] = useState(false)
   const initialStates = Array.from({ length: 20 }, () => false)
-  const [state, setState] = useState(initialStates)
-
-  console.log(state)
-
-  // To get the first n elements of an array, use
-
-  // const slicedArray = array.slice(0, n);
+  const [back, setBack] = useState(initialStates)
 
   const param = useParams()
   const page = Number(param.page)
@@ -42,9 +35,9 @@ export default function KanjiList() {
         <div className="character-list">
           {kanjiArray.map((kanji: string, i: number) =>
             !back ? (
-              <KanjiDisplay kanji={kanji} key={i} setBack={setBack} />
+              <KanjiDisplay kanji={kanji} key={i} setBack={setBack} i={i} />
             ) : (
-              <KanjiBackside kanji={kanji} key={i} setBack={setBack} />
+              <KanjiBackside kanji={kanji} key={i} setBack={setBack} i={i} />
             ),
           )}
         </div>
