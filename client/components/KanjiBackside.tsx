@@ -29,11 +29,13 @@ export default function KanjiBackside({ kanji, setBack, i }: Props) {
   if (character) {
     return (
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-      <div className="character" onClick={flipCard}>
+      <div className="character back" onClick={flipCard}>
         <h2>{character.kanji}</h2>
-        {character.meanings.map((meaning: string, i: number) => (
-          <p key={i}>{meaning}</p>
-        ))}
+        <div className="char-info">
+          {character.meanings.map((meaning: string, i: number) => (
+            <p key={i}>{meaning}</p>
+          ))}
+        </div>
       </div>
     )
   }

@@ -8,10 +8,21 @@
   width: 25em;
   height: 18em;
   margin: 1em 1em;
+  padding: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.front h2 {
+.character h2 {
+  margin-top: 0em;
+}
+
+.char-info {
+  align-self: flex-start;
+}
+
+.back {
+  justify-content: flex-start;
 }
