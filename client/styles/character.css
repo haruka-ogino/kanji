@@ -19,8 +19,28 @@
   margin-top: 0em;
 }
 
+.character h3 {
+  font-style: normal;
+  margin: 0em;
+  padding: 0em;
+}
+
 .char-info {
   align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* padding: 1em; */
+}
+
+.info-section {
+  padding: 0.5em;
+}
+
+.info-section h3,
+.info-section p {
+  margin: 0em;
+  padding: 0em;
 }
 
 .back {
