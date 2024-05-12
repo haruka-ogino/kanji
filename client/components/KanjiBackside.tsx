@@ -32,9 +32,24 @@ export default function KanjiBackside({ kanji, setBack, i }: Props) {
       <div className="character back" onClick={flipCard}>
         <h2>{character.kanji}</h2>
         <div className="char-info">
-          {character.meanings.map((meaning: string, i: number) => (
-            <p key={i}>{meaning}</p>
-          ))}
+          <>
+            <h3>kun readings</h3>
+            {character.kun_readings.map((meaning: string, i: number) => (
+              <p key={`kun-${i}`}>{meaning}</p>
+            ))}
+          </>
+          <>
+            <h3>on readings</h3>
+            {character.kun_readings.map((meaning: string, i: number) => (
+              <p key={`on-${i}`}>{meaning}</p>
+            ))}
+          </>
+          <>
+            <h3>meanings</h3>
+            {character.meanings.map((meaning: string, i: number) => (
+              <p key={`meaning-${i}`}>{meaning}</p>
+            ))}
+          </>
         </div>
       </div>
     )
