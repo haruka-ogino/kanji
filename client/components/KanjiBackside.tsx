@@ -31,28 +31,28 @@ export default function KanjiBackside({ kanji, setBack, i }: Props) {
       // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
       <div className="character back" onClick={flipCard}>
         <h2>{character.kanji}</h2>
-        <div className="char-info">
-          <div className="info-section">
+        <div className="meanings-container">
+          {/* <h3>meanings:</h3> */}
+          {character.meanings.map((meaning: string, i: number, array: []) => (
+            <>
+              <p key={`meaning-${i}`} className="meaning-item">
+                {meaning}
+              </p>
+              {i !== array.length - 1 && <p>/</p>}
+            </>
+          ))}
+        </div>
+        <div className="char-readings">
+          <div className="reading">
             <h3>kun readings</h3>
             {character.kun_readings.map((meaning: string, i: number) => (
               <p key={`kun-${i}`}>{meaning}</p>
             ))}
           </div>
-          <div className="info-section">
+          <div className="reading">
             <h3>on readings</h3>
             {character.kun_readings.map((meaning: string, i: number) => (
               <p key={`on-${i}`}>{meaning}</p>
-            ))}
-          </div>
-          <div className="meanings-container">
-            {/* <h3>meanings:</h3> */}
-            {character.meanings.map((meaning: string, i: number, array: []) => (
-              <>
-                <p key={`meaning-${i}`} className="meaning-item">
-                  {meaning}
-                </p>
-                {i !== array.length && <p> / </p>}
-              </>
             ))}
           </div>
         </div>
